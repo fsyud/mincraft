@@ -1,0 +1,38 @@
+---
+import Base from "~/layouts/Base.astro";
+---
+
+<Base>
+  <div
+    class="flex flex-col justify-center w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mx-auto gap-5 py-5 px-2 markdown"
+  >
+    <h3 class="underline text-2xl sm:text-4xl text-white">yu blog</h3>
+    <p class="indent-5 text-white">
+      欢迎来到我的<a href="/blog" class="text-link hover:underline">blog</a
+      >博客主题《我的世界》，梦开始的地方
+    </p>
+    <h3 class="text-center underline text-4xl text-white">一些项目</h3>
+    <div class="flex items-center justify-center">
+      <ul>
+        <li>
+          一个迷你的 <a href="https://github.com/ligdy7/swr-min" target="_blank"
+            >swr-min</a>
+        </li>
+        <li>
+          一个高度自定义的拓展<a
+            href="https://github.com/ligdy7/bookmarks-quick-search"
+            target="_blank">Chrome bookmarks Quick Search</a>
+        </li>
+        <li>
+            一个有趣的node项目 <a href="https://github.com/fsyud/web-server" target="_blank"
+              >node-server</a>
+          </li>
+        <li>...</li>
+      </ul>
+    </div>
+    <a
+      href="/blog"
+      class="self-center py-2 px-5 my-5 button text-shadow-lg text-2xl">开始</a
+    >
+  </div>
+</Base>
