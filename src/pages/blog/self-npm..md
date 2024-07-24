@@ -1,5 +1,5 @@
 ---
-title: "self-npm."
+title: "构建个人npm私有库"
 layout: "../../layouts/Blog.astro"
 ---
 

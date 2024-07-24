@@ -1,5 +1,5 @@
 ---
-title: 'leijun'
+title: '观雷军的公开演讲'
 layout: '../../layouts/Blog.astro'
 ---
 
