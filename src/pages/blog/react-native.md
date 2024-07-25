@@ -1,5 +1,5 @@
 ---
-title: 'react-native'
+title: 'react-native 笔记'
 layout: '../../layouts/Blog.astro'
 ---
 
