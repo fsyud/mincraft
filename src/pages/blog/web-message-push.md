@@ -9,6 +9,9 @@ layout: "../../layouts/Blog.astro"
 
 消息推送无非是推（push）和拉（pull）两种形式，下边我们逐个了解下。
 
+![b08fbb575337cc8a4e27a1274fb70eff](https://github.com/user-attachments/assets/6abe4d48-0777-4305-9db5-90a37c45b2cf)
+
+
 ## 短轮询
 
 轮询(polling)应该是实现消息推送方案中最简单的一种，这里我们暂且将轮询分为短轮询和长轮询。
@@ -29,6 +32,9 @@ setInterval(() => {
 ```
 
 效果还是可以的，短轮询实现固然简单，缺点也是显而易见，由于推送数据并不会频繁变更，无论后端此时是否有新的消息产生，客户端都会进行请求，势必会对服务端造成很大压力，浪费带宽和服务器资源。
+
+
+![1](https://github.com/user-attachments/assets/fef8c065-dea6-48a5-9c6a-922f3c53b3b0)
 
 ## 长轮询
 
@@ -103,6 +109,9 @@ public class AsyncRequestTimeoutHandler {
 
 我们来测试一下，首先页面发起长轮询请求/polling/watch/10086 监听消息更变，请求被挂起，不变更数据直至超时，再次发起了长轮询请求；紧接着手动变更数据/polling/publish/10086，长轮询得到响应，前端处理业务逻辑完成后再次发起请求，如此循环往复。
 
+![2](https://github.com/user-attachments/assets/bcb10c2d-2ee3-4153-900b-0e872dea9e93)
+
+
 长轮询相比于短轮询在性能上提升了很多，但依然会产生较多的请求，这是它的一点不完美的地方。
 
 ## iframe 流
@@ -137,7 +146,10 @@ public class IframeController {
         }
     }
 }
+
 ```
+
+![3](https://github.com/user-attachments/assets/4cbddee9-947b-4cea-8a09-f29d464fa690)
 
 但我个人不推荐，因为它在浏览器上会显示请求未加载完，图标会不停旋转，简直是强迫症杀手。
 
@@ -241,8 +253,11 @@ public static void sendMessage(String userId, String message) {
             removeUser(userId);
         }
     }
+
 }
 ```
+![4](https://github.com/user-attachments/assets/b730cf58-7582-437d-94f2-fdb7bb5538f0)
+
 
 我们模拟服务端推送消息，看下客户端收到了消息，和我们预期的效果一致。
 
@@ -376,7 +391,10 @@ public class WebSocketServer {
         })
     }
 </script>
+
 ```
+
+![5](https://github.com/user-attachments/assets/a8b6d7cc-3d40-46e5-9176-37399a9c4433)
 
 页面初始化建立 websocket 连接，之后就可以进行双向通信了，效果还不错
 
