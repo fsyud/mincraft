@@ -30,7 +30,7 @@ const introduceMyself = () => {
     "mongodb",
     "ReactNative",
   ];
-  const experienceYears = 5;
+  const experienceYears = 7;
 
   console.log(
     `Hello! My name is ${name}. I am a ${profession} with ${experienceYears} years of experience.`
