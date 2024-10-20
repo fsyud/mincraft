@@ -105,6 +105,53 @@ export default LanguageSwitcher;
 
 上面的代码中，useRouter 提供了当前语言（locale）、支持的语言列表（locales）等信息，点击不同的链接即可切换语言。
 
+### nextjs 多语言切换路由 getServerSideProps 会重新执行么
+
+> 在 Next.js 中，当你使用 getServerSideProps 并切换语言时，getServerSideProps 会重新执行。
+
+这是因为 `getServerSideProps` 是在每次请求时执行的，负责在服务端获取数据。当你切换多语言时，通常会发生页面路由的变化，这会触发新的请求。因此，`getServerSideProps` 会在路由变化时重新运行。
+
+多语言切换的过程：
+
+路由变更：使用 Next.js 的 i18n 特性，你可以为不同语言配置不同的路由路径。比如，/en/about 对应英语页面，/fr/about 对应法语页面。切换语言时，路由也会随之更改。
+
+`getServerSideProps` 执行：当你从 `/en/about` 切换到 /`fr/about`，这是一次**新的路由请求**，`getServerSideProps` 会为新的路由（例如 /fr/about）重新执行，获取相关的数据并传递给页面。
+
+服务器端获取语言参数：你可以在 `getServerSideProps` 中通过 context.locale 获取当前的语言，从而根据语言加载不同的内容。
+
+例子：
+
+```js
+export async function getServerSideProps(context) {
+  const { locale } = context; // 获取当前语言
+  const res = await fetch(`https://example.com/api/data?lang=${locale}`);
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+function Page({ data }) {
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <p>{data.content}</p>
+    </div>
+  );
+}
+
+export default Page;
+```
+
+在这个例子中，每当用户切换语言并更改路由（例如从 /en 切换到 /fr），getServerSideProps 都会根据新的语言参数重新获取数据并渲染页面。
+
+总结：
+当你使用 `getServerSideProps` 时，切换语言通常意味着路由发生了变化，而这会触发 `getServerSideProps` 的重新执行。
+你可以在 `getServerSideProps` 中根据 `locale` 来动态获取与语言相关的数据。
+
 ## 5.国际化数据获取 (getStaticProps 和 getServerSideProps)
 
 Next.js 中的静态生成和服务端渲染（如 getStaticProps 和 getServerSideProps）在国际化中起到了关键作用，帮助加载特定语言的内容。使用这些方法时，Next.js 会为每个语言的页面调用一次数据获取方法。
