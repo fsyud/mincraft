@@ -1,4 +1,4 @@
-See it live: [https://teal-marigold-7cdc3c.netlify.app/)](https://teal-marigold-7cdc3c.netlify.app/](https://teal-marigold-7cdc3c.netlify.app/)
+See it live: https://teal-marigold-7cdc3c.netlify.app/
 
 
 ## DEMO
