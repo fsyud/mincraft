@@ -1,26 +1,10 @@
-# Minecraft Theme for Astro
-
-Document your projects, build with blocks, display items and paintings, create game like GUIs, and tons more! This is a Minecraft themed website theme/template built using Astro and Tailwindcss. This theme provides easy to use classes for styling and gives a few pages pages, two layouts, and two components for examples on how to use these classes. The purpose of this theme is to provide a quick and easy way for Minecraft developers and content creators to create documention and show off their creations
 
 ## DEMO
 
-[https://minecraft-theme.netlify.app](https://minecraft-theme.netlify.app)
+<img width="1413" alt="iShot_2024-10-25_23 47 22" src="https://github.com/user-attachments/assets/ea517094-c01c-4993-a066-838dfd3977dd">
 
-## **Features**
 
-- Display over 200+ items
-- Build with 100+ blocks
-- Repeating block backgrounds
-- All 25 paintings
-- Block based units/sizes
-- Create GUIs using panels, slots, and buttons
-- Misc UIs like maps, books, signs, and item frames
-- Minecraft typography using the `Minecraft` font, text colors, and text shadows
-- 75+ Minecraft themed colors
-- Markdown theme
-- Documentation system
-
-## Docs
+[[https://minecraft-theme.netlify.app](https://teal-marigold-7cdc3c.netlify.app/)](https://teal-marigold-7cdc3c.netlify.app/)
 
 
 
